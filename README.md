@@ -1,4 +1,4 @@
-# Github::Issue::Book
+# Playbook
 
 Create playbook from text
 
