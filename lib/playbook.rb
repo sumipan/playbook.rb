@@ -42,7 +42,7 @@ module Playbook
   end
 
   class Scenario
-    attr_reader :text, :author
+    attr_accessor :text, :author
 
     def initialize(attributes = {})
       @text   = attributes[:text]
