@@ -42,11 +42,12 @@ module Playbook
   end
 
   class Scenario
-    attr_accessor :text, :author
+    attr_accessor :text, :author, :book_number
 
     def initialize(attributes = {})
       @text   = attributes[:text]
       @author = attributes[:author] || ''
+      @book_number = attributes[:book_number} || 0
     end
   end
 
