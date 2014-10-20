@@ -22,9 +22,9 @@ Or install it yourself as:
 
 Sample playbook text
 
-Playbook text contains ``` ```book ``` start, and ``` ``` ``` end
+Playbook 読み込まれたテキスト内の \```book で始まって \``` で終わるまでをブックとして扱います。
 
-```
+<pre>
 これはサンプルです。
 このような書き方でシナリオを記述してください。
 
@@ -34,7 +34,7 @@ scenario: すやすやイルカが眠っている
 scenario: すやすやイルカに猫が近づく
 scene: シーン2
 scenario: すやすやイルカが目を覚ます
-``\`
+```
 
 ```book
 scene: シーン3
@@ -42,8 +42,8 @@ scenario: すやすやイルカが眠っている
 scenario: すやすやイルカに犬が近づく
 scene: シーン4
 scenario: すやすやイルカが眠そうにしている
-``\`
 ```
+</pre>
 
 In ruby
 
