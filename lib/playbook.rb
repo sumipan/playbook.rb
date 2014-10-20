@@ -47,7 +47,7 @@ module Playbook
     def initialize(attributes = {})
       @text   = attributes[:text]
       @author = attributes[:author] || ''
-      @book_number = attributes[:book_number} || 0
+      @book_number = attributes[:book_number] || 0
     end
   end
 
