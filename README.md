@@ -36,7 +36,10 @@ scene: シーン2
 scenario: すやすやイルカが目を覚ます
 ```
 
+章を含める場合は ```chapter``` を追加
+
 ```book
+chapter: 第一章
 scene: シーン3
 scenario: すやすやイルカが眠っている
 scenario: すやすやイルカに犬が近づく
