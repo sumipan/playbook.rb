@@ -54,7 +54,7 @@ In ruby
 require 'playbook'
 
 playbook = Playbook.parse(raw_text)
-playbook.scenes.each do |scene|
+playbook.chapters.first.scenes.each do |scene|
   scene.scenarios.each do |scenario|
     scenario.text
   end
