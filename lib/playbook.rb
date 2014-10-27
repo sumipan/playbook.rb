@@ -127,11 +127,12 @@ module Playbook
       chapter_name = ''
       scene_name = nil
       rough_book[0].strip.split(/\r?\n/).each do |sentence|
+        sentence = sentence.strip
         case sentence
         when /^chapter:/
-          chapter_name = sentence.match(/^chapter: *(\S+) *$/)[1]
+          chapter_name = sentence.match(/^chapter: *(.+)$/)[1]
         when /^scene:/
-          scene_name = sentence.match(/^scene: *(\S+) *$/)[1]
+          scene_name = sentence.match(/^scene: *(.+)$/)[1]
         when /^scenario:/
           raise 'error: scene not set' if scene_name == nil
           chapter = playbook.chapters.select{|chapter| chapter.name == chapter_name }.first
@@ -147,7 +148,7 @@ module Playbook
           end
 
           scene.add_scenario(Scenario.new(
-            :text   => sentence.match(/^scenario: *(\S+) *$/)[1],
+            :text   => sentence.match(/^scenario: *(.+)*$/)[1],
             :author => author
           ))
         end
