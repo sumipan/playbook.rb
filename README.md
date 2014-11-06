@@ -61,6 +61,20 @@ playbook.chapters.first.scenes.each do |scene|
 end
 ```
 
+Github integration
+
+```ruby
+Playbook::Github.configure do |github|
+  github.setup({
+    :user => 'username',
+    :repo => 'reponame',
+    :oauth_token => 'your api token',
+  })
+end
+
+playbook = GithubPlaybook.parse(issue_number)
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/sumipan/playbook.rb/fork )
