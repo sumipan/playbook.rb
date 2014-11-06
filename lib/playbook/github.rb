@@ -23,7 +23,7 @@ module Github
     match = issue.body.scan(/#([0-9]+)/)
     if match.size > 0 then
       match.map{|m| m.first }.each do |issue_id|
-        scenario_issue = @@github.issues.get(:user => @@github.user, :repo => @@github.repo, :number => number).body
+        scenario_issue = @@github.issues.get(:user => @@github.user, :repo => @@github.repo, :number => issue_id).body
         book = Playbook.parse(scenario_issue.body)
         playbook.merge(book)
       end
