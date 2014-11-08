@@ -19,6 +19,14 @@ module Github
     issue = @@github.issues.get(:user => @@github.user, :repo => @@github.repo, :number => number).body
 
     playbook = Playbook.parse(issue.body)
+    playbook.chapters.each do |chapter|
+      chapter.scenes.each do |scene|
+        scene.scenarios.each do |scenario|
+          scenario.book_number = issue.number
+          scenario.author = issue.user.login
+        end
+      end
+    end
 
     match = issue.body.scan(/#([0-9]+)/)
     if match.size > 0 then
