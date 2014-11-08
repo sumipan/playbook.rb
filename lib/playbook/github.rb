@@ -25,6 +25,15 @@ module Github
       match.map{|m| m.first }.each do |issue_id|
         scenario_issue = @@github.issues.get(:user => @@github.user, :repo => @@github.repo, :number => issue_id).body
         book = Playbook.parse(scenario_issue.body)
+        book.chapters.each do |chapter|
+          chapter.scenes.each do |scene|
+            scene.scenarios.each do |scenario|
+              scenario.book_number = scenario_issue.number
+              scenario.author = scenario_issue.user.login
+            end
+          end
+        end
+
         playbook.merge(book)
       end
     end
